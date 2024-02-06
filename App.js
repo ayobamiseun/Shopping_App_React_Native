@@ -15,21 +15,23 @@ export default function App() {
     console.log("hello")
   }
   return (
-    <ScrollView style={{ flex: 1 }}>
-      <Text>Some text</Text>
-      <View style={{...padding(10,20,0,20),}}>
-        <Text>Some more text</Text>
-        <Image
-          source={{
-            uri: "https://reactnative.dev/docs/assets/p_cat2.png",
-          }}
-          style={{ width: 200, height: 200 }}
-        />
-        <TouchableOpacity onPress={onPress} style={styles.appButtonContainer}>
-          <Text style={styles.appButtonText}>Press</Text>
-        </TouchableOpacity>
-      </View>
-    </ScrollView>
+    <View style={{ flex: 1, ...padding(70, 10, 10, 10) }}>
+      <ScrollView>
+        <Text>Some text</Text>
+        <View style={{ ...padding(10, 0, 0, 0) }}>
+          <Text>Some more text</Text>
+          <Image
+            source={{
+              uri: "https://reactnative.dev/docs/assets/p_cat2.png",
+            }}
+            style={{ width: 200, height: 200 }}
+          />
+          <TouchableOpacity onPress={onPress} style={styles.appButtonContainer}>
+            <Text style={styles.appButtonText}>Press</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    </View>
   );
 }
 
