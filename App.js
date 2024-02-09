@@ -1,18 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
 import {
   View,
   Text,
   Image,
   ScrollView,
-
+Modal,
   StyleSheet,
   TouchableOpacity,
 } from "react-native";
 const adaptive = require("./assets/adaptive-icon.png");
 
 export default function App() {
+  const [isVisible, setIsVisible] = useState(false)
   const onPress = () => {
-    console.log("hello")
+     setIsVisible((prev) => !prev); 
   }
   return (
     <View style={{ flex: 1, ...padding(70, 10, 10, 10) }}>
@@ -30,6 +32,22 @@ export default function App() {
             <Text style={styles.appButtonText}>Press</Text>
           </TouchableOpacity>
         </View>
+        <Modal
+          visible={isVisible}
+          animationType="slide"
+          presentationStyle="pageSheet"
+        >
+          <View style={{ ...padding(10, 0, 0, 0) }}>
+            <Text>Some more text</Text>
+
+            <TouchableOpacity
+              onPress={onPress}
+              style={styles.appButtonContainer}
+            >
+              <Text style={styles.appButtonText}>Press</Text>
+            </TouchableOpacity>
+          </View>
+        </Modal>
       </ScrollView>
     </View>
   );
