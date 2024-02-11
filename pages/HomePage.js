@@ -3,7 +3,7 @@ import { StyleSheet , Text, View, Image} from "react-native";
 import { Feather } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import {LinearGradient} from 'expo-linear-gradient';
-// import Categories from "../components/Categories";
+import Categories from "../components/Categories";
 // import Shoes from '../components/Shoes';
 
 
@@ -43,18 +43,18 @@ export default function HomePage({ navigation }){
                     </View>
                   
                     <View style={{paddingLeft:80}}>
-                     <Image
+                     {/* <Image
                         style={{
                         width: 190,
                         height: 120,
                       
                         
                          }}
-                        source={require("../images/nike(red).jpg")}/>
+                        source={require("../images/nike(red).jpg")}/> */}
                     </View>
             
                 </LinearGradient>
-                <Categories/>
+               <Categories/>
                 <Shoes/>
         </View>
   
