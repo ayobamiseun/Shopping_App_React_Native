@@ -4,60 +4,46 @@ import { Feather } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import {LinearGradient} from 'expo-linear-gradient';
 import Categories from "../components/Categories";
-// import Shoes from '../components/Shoes';
+import Shoes from '../components/Shoes';
 
 
 
 
 export default function HomePage({ navigation }){
-    return(
-        <View>
-            <View style={styles.view1}>
-                
-                <Ionicons name="ios-menu-outline" size={24} color="black" />
-                <Feather name="search" size={24} color="black" />
-            
-                
-                    
-            
-            
-            </View>
-                <LinearGradient
-                    colors={['#272320', '#C47945' ]}
-                    locations ={[0.8,  0.9]}
-                    style={styles.linearGradient}
-                    start={{ x: 0, y: 0.5 }}
-                    end={{ x: 0.7, y: 0.5 }}
-                    >
-       
-                    <View>
-                    <Text style={styles.text1}>
-                        New Release
-                    </Text>
-                    <Text style={styles.text2}>
-                        Nike Air {'\n'}Max 90
-                    </Text>
-                    <View style={styles.card}>
-                        <Text >Shop Now</Text>
-                    </View>
-                    </View>
-                  
-                    <View style={{paddingLeft:80}}>
-                     {/* <Image
-                        style={{
-                        width: 190,
-                        height: 120,
-                      
-                        
-                         }}
-                        source={require("../images/nike(red).jpg")}/> */}
-                    </View>
-            
-                </LinearGradient>
-               <Categories/>
-                <Shoes/>
+    return (
+      <View>
+        <View style={styles.view1}>
+          <Ionicons name="ios-menu-outline" size={24} color="black" />
+          <Feather name="search" size={24} color="black" />
         </View>
-  
+        <LinearGradient
+          colors={["#1a1c1c", "#003538", "#010909"]}
+          locations={[0.8, 0.9]}
+          style={styles.linearGradient}
+          start={{ x: -2, y: 2 }}
+          end={{ x: 2, y: 1 }}
+        >
+          <View>
+            <Text style={styles.text1}>New Release</Text>
+            <Text style={styles.text2}>Nike Air {"\n"}Max 90</Text>
+            <View style={styles.card}>
+              <Text>Shop Now</Text>
+            </View>
+          </View>
+
+          <View style={{ paddingLeft: 80 }}>
+            <Image
+              style={{
+                width: 190,
+                height: 120,
+              }}
+              source={require("../images/nike(red).jpg")}
+            />
+          </View>
+        </LinearGradient>
+        <Categories />
+        <Shoes />
+      </View>
     );
 }
 
