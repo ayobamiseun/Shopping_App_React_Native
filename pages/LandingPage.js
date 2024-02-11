@@ -1,7 +1,7 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity, } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { TouchableOpacity } from "react-native-gesture-handler";
+// import { TouchableOpacity } from "react-native-gesture-handler";
 import { Feather } from "@expo/vector-icons";
 
 export default function LandingPage({ navigation }) {
@@ -26,7 +26,7 @@ export default function LandingPage({ navigation }) {
             marginBottom: 30,
             marginTop: 10,
           }}
-        //   source={require("../images/nike(red).jpg")}
+          //   source={require("../images/nike(red).jpg")}
         />
         <Text style={styles.basetext}>LIVE YOUR PERFECT</Text>
         <Text style={styles.text}>
