@@ -1,54 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
+import { StatusBar } from "expo-status-bar";
+import { useState } from "react";
 import {
   View,
   Text,
   Image,
   ScrollView,
-Modal,
+  Modal,
   StyleSheet,
   TouchableOpacity,
 } from "react-native";
-const adaptive = require("./assets/adaptive-icon.png");
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
 export default function App() {
-  const [isVisible, setIsVisible] = useState(false)
-  const onPress = () => {
-     setIsVisible((prev) => !prev); 
-  }
+  const MainNavigator = createStackNavigator();
   return (
-    <View style={{ flex: 1, ...padding(70, 10, 10, 10) }}>
-      <ScrollView>
-        <Text>Some text</Text>
-        <View style={{ ...padding(10, 0, 0, 0) }}>
-          <Text>Some more text</Text>
-          <Image
-            source={{
-              uri: "https://reactnative.dev/docs/assets/p_cat2.png",
-            }}
-            style={{ width: 200, height: 200 }}
-          />
-          <TouchableOpacity onPress={onPress} style={styles.appButtonContainer}>
-            <Text style={styles.appButtonText}>Press</Text>
-          </TouchableOpacity>
-        </View>
-        <Modal
-          visible={isVisible}
-          animationType="slide"
-          presentationStyle="pageSheet"
-        >
-          <View style={{ ...padding(10, 0, 0, 0) }}>
-            <Text>Some more text</Text>
-
-            <TouchableOpacity
-              onPress={onPress}
-              style={styles.appButtonContainer}
-            >
-              <Text style={styles.appButtonText}>Press</Text>
-            </TouchableOpacity>
-          </View>
-        </Modal>
-      </ScrollView>
+    <View style={{ flex: 1 }}>
+      <NavigationContainer>
+             <MainNavigator.Navigator screenOptions={{headerShown:false}} initialRouteName = "Landingpage">
+              
+             </MainNavigator.Navigator>
+      </NavigationContainer>
     </View>
   );
 }
@@ -76,6 +48,6 @@ function padding(a, b, c, d) {
     paddingTop: a,
     paddingRight: b !== undefined ? b : a,
     paddingBottom: c !== undefined ? c : a,
-    paddingLeft: d !== undefined ? d : (b !== undefined ? b : a)
-  }
+    paddingLeft: d !== undefined ? d : b !== undefined ? b : a,
+  };
 }
