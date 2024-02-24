@@ -7,6 +7,7 @@ import TinySizes from "../components/TinySizes";
 import Button from "../components/Button";
 import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import BackButton from "../components/BackButton";
 
 export default function ProductDetails({ route }) {
   const navigation = useNavigation();
@@ -86,9 +87,7 @@ export default function ProductDetails({ route }) {
         }}
       >
         <View style={styles.second}>
-          <TouchableOpacity onPress={()=> navigation.goBack()}>
-            <Ionicons name="chevron-back" size={24} color="black" />
-          </TouchableOpacity>
+         <BackButton />
           <Ionicons name="heart-outline" size={24} color="black" />
         </View>
 
