@@ -30,7 +30,6 @@ export default function ProductDetails({ route }) {
     });
   };
 
-  //Store data
   const storeProduct = async () => {
     try {
       await AsyncStorage.setItem("user", JSON.stringify(value));
