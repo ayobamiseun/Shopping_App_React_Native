@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity,Image } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 
-const Category = ({ text ,backgroundColor, color}) => {
+const Category = ({ text ,backgroundColor, color, image}) => {
   const [col, setCol] = useState(color);
   const [bgCol, setBgcol]= useState(backgroundColor);
   return (
@@ -25,11 +25,9 @@ const Category = ({ text ,backgroundColor, color}) => {
           width: 20,
           height: 20,
           borderRadius: 20,
-         
-        
-          
+             
         }}
-        source={require("../images/nike(red).jpg")}
+        source={image}
       />
         </View>
       
@@ -43,9 +41,9 @@ const Category = ({ text ,backgroundColor, color}) => {
 const Nav = () => {
   return (
     <View style={styles.nav}>
-      <Category text="Lifestyle" color="#000"  />
-      <Category text="Basketball" color="#000"  />
-      <Category text="Running" color="#000" />
+      <Category text="Lifestyle" color="#000" image={require('../images/dunk.jpg')} />
+      <Category text="Basketball" color="#000"   image={require('../images/sb.jpg')} />
+      <Category text="Running" color="#000" image={require('../images/newb.png')} />
     
     </View>
   );
