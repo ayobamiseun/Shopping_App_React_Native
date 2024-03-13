@@ -2,6 +2,7 @@ import  React from "react";
 import { StyleSheet , Text, View, Image} from "react-native";
 import { Feather } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 import {LinearGradient} from 'expo-linear-gradient';
 import Categories from "../components/Categories";
 import Shoes from '../components/Shoes';
@@ -13,15 +14,15 @@ export default function HomePage({ navigation }){
     return (
       <View>
         <View style={styles.view1}>
-          <Ionicons name="ios-menu-outline" size={24} color="black" />
+          <FontAwesome name="navicon" size={24} color="black" />
           <Feather name="search" size={24} color="black" />
         </View>
         <LinearGradient
-          colors={["#1a1c1c", "#003538", "#010909"]}
-          locations={[0.8, 0.9]}
+          colors={["#272829", "#61677A", "#D8D9DA"]}
+          locations={[0.2, 0.9]}
           style={styles.linearGradient}
-          start={{ x: -2, y: 2 }}
-          end={{ x: 2, y: 1 }}
+          start={{ x: 0.5, y: 0.5 }}
+          end={{ x: 0.5, y: 0.8 }}
         >
           <View>
             <Text style={styles.text1}>New Release</Text>
@@ -37,7 +38,7 @@ export default function HomePage({ navigation }){
                 width: 190,
                 height: 120,
               }}
-              source={require("../images/nike(red).jpg")}
+              source={require("../images/new550.jpg")}
             />
           </View>
         </LinearGradient>

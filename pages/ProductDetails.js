@@ -108,7 +108,7 @@ export default function ProductDetails({ route }) {
 
             <Text style={styles.name}>{name}</Text>
 
-            <TinyShoes />
+            <TinyShoes image={image} />
 
             <View style={styles.sizecontainer}>
               <Text style={{ fontSize: 23 }}>Size</Text>

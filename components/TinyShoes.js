@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 
-const TinyShoes = ({ text, backgroundColor, color }) => {
+const TinyShoes = ({ text, backgroundColor, color, image }) => {
   const [col, setCol] = useState(color);
   const [bgCol, setBgcol] = useState(backgroundColor);
   return (
@@ -30,7 +30,7 @@ const TinyShoes = ({ text, backgroundColor, color }) => {
               width: 30,
               height: 30,
             }}
-            source={require("../images/nike(red).jpg")}
+            source={image}
           />
         </View>
         <Text style={{ color: col, marginTop: 5 }}>{text}</Text>
